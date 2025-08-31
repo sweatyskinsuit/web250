@@ -1,0 +1,37 @@
+What is OOP?
+-object-oriented programming
+-data structures which hold values and functions
+-php is a scripting or procedural language
+-OOP features added in PHP v5.0
+
+Do you need OOP?
+-For a simple site, OOP adds unnecessary complexity
+-For a complex site, OOP adds necessary simplicity
+-Database-drivn sites generally benefit from OOP
+
+What are objects?
+-Code grouped by a common theme or purpose
+-create abstractins in code for real-world objects
+-properties
+-methods
+
+Object properties
+-The dress is green
+-he table is 4 ft long and 2ft wide
+-The house has 3 bedrooms and 2 bathrooms
+-Student: first name, last name
+-Book: title, author, year, pages
+
+Object methods
+-Allow objects to "know" how to perform tasks
+-Use properties, call other methods
+-Shopping cart: total, add_to_cart
+-complexity packaged into a single function
+
+Objects are useful
+-Code organization is easier to maintain
+-Adds clarity and reduces complexity
+-Simple rules allow complex interactions
+-Emphasizes data over procedure
+-Modular, reusable code
+

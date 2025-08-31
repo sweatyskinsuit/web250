@@ -1,0 +1,33 @@
+class Person {
+    var $first_name;
+    var $last_name;
+
+    function full_name() {
+        return $first_name . " " . $last_name;
+    }
+}
+
+$p = new Person;
+$p-> first_name  = 'Jack';
+$p->last_name = 'Jackson';
+echo $p->full_name();
+// Notice: undefined variable: first_name, last_name
+
+Refer to an Instance
+-Outside the class:$variable->
+-Inside the class:$this->
+
+class Person {
+    var $first_name;
+    var $last_name;
+
+    function full_name() {
+        return $this->first_name . " " . $this->last_name;
+    }
+}
+
+$p = new Person;
+$p->first_name = 'Jack';
+$p->last_name = 'Jackson';
+echo $p->full_name();
+// Jack Jackson
