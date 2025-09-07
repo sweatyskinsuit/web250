@@ -1,0 +1,32 @@
+class Vehicle {
+    var $color;
+    var $wheels;
+    var $doors;
+
+    function upload_image($file) {
+        // ...
+    }
+    function is_good_for_rain() {
+        return true;
+    }
+}
+
+class Car extends Vehicle {
+    var $wheels = 4;
+    var $doors = 4;
+    var $convertible = false;
+
+    function is_good_for_rain() {
+        return !$this->convertible;
+    }
+}
+
+class Motorcycle extends Vehicle 
+{
+    var $wheels = 2;
+    var $doors = 0;
+
+    function is_good_for_rain() {
+        return false;
+    }
+}

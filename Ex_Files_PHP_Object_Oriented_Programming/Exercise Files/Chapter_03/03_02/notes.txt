@@ -1,0 +1,54 @@
+Define a Subclass
+
+class Parent {
+}
+
+class Subclass extends Parent {
+}
+
+
+class Document {
+    var $file_name;
+
+    function download_path() {
+        return "/downloads/" . $this->file_name;
+    }
+}
+class ProductBrochure extends Document {
+}
+class WarrantyDocument extends Document {
+}
+class CleaningInstructions extends Document {
+}
+
+subclasses can have additional subclasses:
+
+class Vehicle {
+    var $wheels;
+    var $doors;
+
+    function gasoline_type() {
+        return 'Unleaded';
+    }
+}
+class Car extends Vehicle {
+}
+class Motorcycle extends Vehicle {
+}
+class CompactCar extends Car {
+}
+
+Vehicle (parent)
+Car and Motorcycle (subclasses)
+Car -> CompactCar (Subclass)
+
+Functions for Inheritance
+
+get_parent_class($mixed)
+    can either take the name of the class or an instance of the class as an argument
+
+is_subclass_of($mixed, $string)
+    can also take the name of a class or an instance as its first argument
+
+class_parents($mixed)
+    to find out if something is a subclass of whatever that parent class might be, or ask for all class parents
