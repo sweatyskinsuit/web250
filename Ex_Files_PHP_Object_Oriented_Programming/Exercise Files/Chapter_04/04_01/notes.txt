@@ -1,0 +1,51 @@
+Visibility Modifiers are used to control access to objects, properties, and methods
+
+3 types pf visibility Modifiers
+- public (accessible from anywhere)
+- protected (accessible from inside this class and its subclasses)
+- private (inside this class only)
+
+class Example {
+    public $a;          //default if undeclared (var)
+    protected $b;
+    private $c;
+
+    public function hello_world() {        //default if undeclared
+        return "Hello everyone!";
+    }
+
+    protected function hello_family() {
+        return "Hello family!";
+    }
+
+    private function hello_me() {
+        return "Hello me!";
+    }
+}
+
+A more concrete example:
+
+class User {
+
+    private $is_admin = false;
+
+    private function has_admin_access() {
+        return $this->is_admin === true;
+    }
+
+    public function access_level() {
+        return $this->has_admin_access() ? 'Admin' : 'Standard';
+    }
+}
+
+$user = mew User;
+echo $user->is_admin;       //Error: Cannot access private property 
+$user->is_admin = true;     //Error: Cannot access private property
+echo $user->has_admin_access(); //Error: Call to private method 
+echo $user->access_level();     // 'Standard'
+
+Best Practices
+- Always use visibility modifiers, not defaults
+- Consider visibility when coding
+- Make properties and methods public onl when necessary
+- Group properties and methods with similar visibility

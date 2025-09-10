@@ -2,9 +2,9 @@
 
 class Pet
 {
-    var $vertebrateType;
-    var $legCount;
-    var $hasFur;
+    protected $vertebrateType;
+    public $legCount;
+    public $hasFur;
 
     function allowedLooseInside()
     {
@@ -14,12 +14,12 @@ class Pet
 
 class Cat extends Pet
 {
-    var $vertebrateType = 'mammal';
-    var $legCount = 4;
-    var $hasFur = true;
-    var $hasWhiskers = true;
+    public $vertebrateType = 'mammal';
+    public $legCount = 4;
+    public $hasFur = true;
+    public $hasWhiskers = true;
 
-    function allowedLooseInside()
+    public function allowedLooseInside()
     {
         return true;
     }
@@ -27,11 +27,11 @@ class Cat extends Pet
 
 class Snake extends Pet
 {
-    var $vertebrateType = 'reptile';
-    var $legCount = 0;
-    var $hasFur = false;
+    public $vertebrateType = 'reptile';
+    public $legCount = 0;
+    public $hasFur = false;
 
-    function allowedLooseInside()
+    public function allowedLooseInside()
     {
         return false;
     }
@@ -39,11 +39,11 @@ class Snake extends Pet
 
 class Bird extends Pet
 {
-    var $vertebrateType = 'bird';
-    var $legCount = 2;
-    var $canFly = true;
+    public $vertebrateType = 'bird';
+    public $legCount = 2;
+    public $canFly = true;
 
-    function allowedLooseInside()
+    public function allowedLooseInside()
     {
         return true;
     }

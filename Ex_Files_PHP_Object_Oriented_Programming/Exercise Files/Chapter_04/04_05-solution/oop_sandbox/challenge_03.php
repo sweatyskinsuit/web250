@@ -1,6 +1,7 @@
 <?php
 
-class Bicycle {
+class Bicycle
+{
 
   public $brand;
   public $model;
@@ -9,38 +10,43 @@ class Bicycle {
   private $weight_kg = 0.0;
   protected $wheels = 2;
 
-  public function name() {
+  public function name()
+  {
     return $this->brand . " " . $this->model . " (" . $this->year . ")";
   }
 
-  public function wheel_details() {
+  public function wheel_details()
+  {
     $wheel_string = $this->wheels == 1 ? "1 wheel" : "{$this->wheels} wheels";
     return "It has " . $wheel_string . ".";
   }
 
-  public function weight_kg() {
+  public function weight_kg()
+  {
     return $this->weight_kg . ' kg';
   }
 
-  public function set_weight_kg($value) {
+  public function set_weight_kg($value)
+  {
     $this->weight_kg = floatval($value);
   }
 
-  public function weight_lbs() {
+  public function weight_lbs()
+  {
     $weight_lbs = floatval($this->weight_kg) * 2.2046226218;
     return $weight_lbs . ' lbs';
   }
 
-  public function set_weight_lbs($value) {
+  public function set_weight_lbs($value)
+  {
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
-
 }
 
-class Unicycle extends Bicycle {
+class Unicycle extends Bicycle
+{
   // visibility must match property being overridden
   protected $wheels = 1;
-
 }
 
 $trek = new Bicycle;
@@ -71,5 +77,3 @@ echo "<hr />";
 // $uni->set_weight_kg(1);
 // echo $uni->weight_kg() . "<br />";
 // echo $uni->weight_lbs() . "<br />";
-
-?>

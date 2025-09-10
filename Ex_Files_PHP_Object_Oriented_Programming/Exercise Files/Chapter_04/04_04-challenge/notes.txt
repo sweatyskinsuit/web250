@@ -1,0 +1,33 @@
+Watch the entire Object Access Control tutorial (chapter 4). Use the
+challenge-03-oac.php file. You must address all of Kevin's points.
+Add visibility modifiers to the bicycle class
+Set visibility for all existing properties and methods. Deciding what to make public,
+protected, and private is difficult. To give yourself some help, check out the answer for
+visibility, then try to do it yourself.
+Create a unicycle subclass.
+Add the property $wheels and set values for each class.
+Define a wheelDetails() method which returns "it has two wheels" when called.
+Make weightKg a private property.
+Define a setWeightKg() method (setter method).
+Create a getter method to read that value back followed by "kg."
+Modify the weightLbs() method to add "lbs" to it.
+What bug have you introduced to the $weightKg ?
+Try doing as much of this as possible without peeking at the solution. It's an excellent exercise.
+
+Challenge: Access Control
+1:
+- Add visibility modifiers to Bicycle class
+- Challenge_03.php
+- Set visibility for all existing properties and methods
+2:
+- Create Unicycle as a subclass of Bicycle
+- Add property $wheels with default values for each class
+- Set visibility such that $wheels is only available to the code that defines Bicycle and Unicycle
+- Define a wheel_details() method which returns "It has 2 wheels" or "It has one wheel" when called on an instance
+3:
+- Make $weight_kg a private property 
+- Define a set_weight_kg() method 
+- Define a weight_kg() method which returns the weight followed by "kg"
+- Modify the weight_lbs() method to add "lbs"
+- What bug exists related to $weight_kg?
+- How would you fix it?
