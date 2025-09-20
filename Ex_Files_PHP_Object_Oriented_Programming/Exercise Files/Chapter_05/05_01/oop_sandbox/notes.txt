@@ -1,0 +1,42 @@
+Static Properties and Methods
+- Behaviors related to the glass generally
+- Not tied to a particular instance
+- "class properties", "class methods"
+- Accessible directly from the class, without any instance
+- Use keyword Static
+
+class Student {
+    static $grades = ['Freshman', 'Sophomore', 'Junior', 'Senior'];
+
+    static function motto() {
+        return "To learn PHP OOP!";
+    }
+}
+
+The Static Modifier
+- Different syntax to reference static properties and methods
+- Student::$grades, Student::motto()
+- Static methods cannot use pseudo-variable $this
+- self::$grades, self::motto()
+- it's considered best practice to use the class name when you're outside the class and to use the self when you're writing code inside class
+- can be combined with visibility modifiers
+
+class Student {
+    public static $grades = ['Freshman', 'Sophomore', 'Junior', 'Senior'];
+
+    public static function count() {
+        return self::$total_students;
+    }
+}
+
+echo Student::$grades[0];
+//Freshman
+
+echo Student::$total_students; // Error: cannot access private property
+echo Student::count();
+// 0
+
+- Static properties are not accessible from an instance
+- Static methods are accessible from an instance
+- Bad practice: PHP 5 warning, PHP 7 deprecation notice
+

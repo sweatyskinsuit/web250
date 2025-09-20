@@ -1,0 +1,41 @@
+Inherited Static Behaviors
+- Static properties and methods are inherited 
+- Visibility modifiers function the same
+- Inherited static properties are SHARED variables
+- Changes to the parent value change subclass values
+- Changes to a subclass value change the parent value
+
+class Student {
+    public static $grades = ['Freshman', 'Sophomore', 'Junior', 'Senior'];
+}
+
+class PartTimeStudent extends Student {
+}
+
+echo PartTimeStudent::$grades[0];
+// Freshman 
+
+PartTimeStudent::$grades[] = 'Alumni';
+
+echo implode (',', Student::$grades);
+// Freshman, Sophomore, Junior, Senior, Alumni
+
+
+another example
+
+class Student {
+    public static $total_students = 0;
+}
+
+class PartTimeStudent extends Student {
+}
+
+Student::$total_students++;
+Student::$total_students++;
+Student::$total_students++;
+PartTimeStudent::$total_students;
+
+echo Student::$total_students;
+//4
+echo PartTimeStudent::$total_students;
+//4
