@@ -1,1 +1,21 @@
 Challenge: Static References
+- Reuse Bicycle and Unicycle classes
+- challenge_04.php
+- add a static property $instance_count
+- write a static method create()
+    - add one to $instance_count
+    - create and return a new instance of the class
+- Set visibility modifiers on $instance_count and create() 
+
+- Define a constant for storing an array of categories
+- Road, Mountain, Hybrid, Cruiser, City, BMX
+- For PHP 7.1+, set visibility modifier to public
+- Add a $category property for instances to store their category
+
+- Make $wheels a static property
+- Make wheel_details() a static method
+- Ensure that Unicycle returns expected wheel_details()
+
+Extra Credit
+- Create a method in Unicycle which extends a method in Bicycle by executing code before and/or after it 
+- Create a method in Unicycle which overrides a method in Bicycle but then also falls back to the original method if a condition is not met 
