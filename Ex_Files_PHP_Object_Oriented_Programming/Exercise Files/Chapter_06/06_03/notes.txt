@@ -1,0 +1,45 @@
+Destructor Method
+
+class Product {
+    public static $instance_count = 0;
+
+    public function __construct() {
+        Logger::log('Creating a product');
+        self::$instance_count++;
+    }
+
+    public function __destruct() {
+        Logger::log('Deleting a product');
+        self::$instance_count--;
+    }
+}
+
+- Destruct takes no arguments
+- Best for logging and cleanup operations
+Times destructor method is called
+- Called when the last reference (the variable that we create that points to the new instance that we've created) to an instance is removed
+- When unset() is called on an instance
+- When script ends
+
+Destructor Method
+
+class Product {
+    public static $instance_count = 0;
+
+    public function __construct() {
+        Logger::log('Creating a product');
+        self::$instance_count++;
+    }
+
+    public function __destruct() {
+        Logger::log('Deleting a product');
+        self::$instance_count--;
+    }
+}
+
+$shirt = new Product;
+echo Product::$instance_count;
+// 1
+
+unset($shirt);
+echo Product::$instance_count;

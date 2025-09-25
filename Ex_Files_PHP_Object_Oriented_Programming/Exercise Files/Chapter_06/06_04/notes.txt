@@ -1,0 +1,32 @@
+Clone Method
+
+clone keyword:
+$shirt1 = new Product;
+$shirt1 ->color = 'blue';
+
+#shirt 2 = clone $shirt1;
+
+echo $shirt1->color;
+// blue
+echo $shirt2->color;
+// blue 
+
+$shirt->color = 'green';
+
+echo $shirt1->color;
+// blue 
+echo $shirt2->color;
+// green 
+
+clone magic method:
+class Product {
+    public static $instance_count = 0;
+
+    public function __construct() {
+        self::$instance_count++;
+    }
+
+    public function __clone() {
+        self::$instance_count++;
+    }
+}

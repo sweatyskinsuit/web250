@@ -1,0 +1,36 @@
+class Product {
+
+    public $name;
+    public $color;
+
+    public function __construct($name, $color) {
+        $this->name = $name;
+        $this->color = $color;
+    }
+}
+
+$shirt = new Product('T-shirt', 'blue');
+echo $shirt->color;
+// blue
+
+If you have several values that are just numbers and it's hard to know which is which, you can make arguments into a single array so that it's less sensitive to that.
+
+class Product {
+    public $name;
+    public $color;
+    public $price;
+
+    public function __construct($args=[]) {
+        $this->name = $args['name'] ?? NULL;
+        $this->color = $args['color'] ?? NULL;
+        $this->color = $args['price'] ?? NULL;
+    }
+}
+
+$shirt = new Product(['name'=>'T-shirt', 'color'=>'blue', 'price'=>9.99]);
+echo $shirt->color;
+// blue
+
+Main points:
+- You can pass in arguments to the constructor and the way you do that is putting parentheses after the class name
+- It may be beneficial to look at the arguments as an array design pattern instead of trying to list out al the individual arguments
