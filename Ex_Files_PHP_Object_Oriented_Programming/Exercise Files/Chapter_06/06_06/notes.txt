@@ -1,8 +1,0 @@
-Compare Objects
-
-- Comparison operator: ==
-- Identity operator: ===
-
-- References to the same instance (== yes) (=== yes)
-- Instances with matching properties (== yes) (=== no)
-- Instances with different properties (== no) (=== no)
