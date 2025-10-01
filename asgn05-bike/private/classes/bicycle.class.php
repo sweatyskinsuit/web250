@@ -1,6 +1,7 @@
 <?php
 
-class Bicycle {
+class Bicycle
+{
 
   public $brand;
   public $model;
@@ -16,7 +17,7 @@ class Bicycle {
   public const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Cruiser', 'City', 'BMX'];
 
   public const GENDERS = ['Mens', 'Womens', 'Unisex'];
-
+  // CONDITION_OPTIONS is used to to get the conditional label for a bike. It provides the same set of choices across all the code and stores numeric values in human-readable labels.
   protected const CONDITION_OPTIONS = [
     1 => 'Beat up',
     2 => 'Decent',
@@ -25,7 +26,8 @@ class Bicycle {
     5 => 'Like New'
   ];
 
-  public function __construct($args=[]) {
+  public function __construct($args = [])
+  {
     //$this->brand = isset($args['brand']) ? $args['brand'] : '';
     $this->brand = $args['brand'] ?? '';
     $this->model = $args['model'] ?? '';
@@ -46,31 +48,33 @@ class Bicycle {
     // }
   }
 
-  public function weight_kg() {
+  public function weight_kg()
+  {
     return number_format($this->weight_kg, 2) . ' kg';
   }
 
-  public function set_weight_kg($value) {
+  public function set_weight_kg($value)
+  {
     $this->weight_kg = floatval($value);
   }
 
-  public function weight_lbs() {
+  public function weight_lbs()
+  {
     $weight_lbs = floatval($this->weight_kg) * 2.2046226218;
     return number_format($weight_lbs, 2) . ' lbs';
   }
 
-  public function set_weight_lbs($value) {
+  public function set_weight_lbs($value)
+  {
     $this->weight_kg = floatval($value) / 2.2046226218;
   }
 
-  public function condition() {
-    if($this->condition_id > 0) {
+  public function condition()
+  {
+    if ($this->condition_id > 0) {
       return self::CONDITION_OPTIONS[$this->condition_id];
     } else {
       return "Unknown";
     }
   }
-
 }
-
-?>
