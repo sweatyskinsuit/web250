@@ -1,9 +1,9 @@
 --
 -- Table structure for table `birds`
 --
-DROP DATABASE IF EXISTS `bird`;
-CREATE DATABASE `bird`;
-USE `bird`;
+DROP DATABASE IF EXISTS `hannrgla_bird`;
+CREATE DATABASE `hannrgla_bird`;
+USE `hannrgla_bird`;
 
 DROP TABLE IF EXISTS `birds`;
 CREATE TABLE `birds` (
