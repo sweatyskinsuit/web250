@@ -2,6 +2,8 @@
 
 require_once('../../private/initialize.php');
 
+require_login();
+
 if (!isset($_GET['id'])) {
   redirect_to(url_for('members/index.php'));
 }
@@ -19,7 +21,7 @@ if (is_post_request()) {
   $result = $member->save();
 
   if ($result === true) {
-    $_SESSION['message'] = 'The member was updated successfully.';
+    $session->message('The member was updated successfully.');
     redirect_to(url_for('/members/show.php?id=' . $id));
   } else {
     // show errors

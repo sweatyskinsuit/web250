@@ -17,7 +17,7 @@ if ($bird == false) {
 
 if (is_post_request()) {
   $result = $bird->delete();
-  $_SESSION['message'] = 'The bird was deleted successfully.';
+  $session->message('The bird was deleted successfully.');
   redirect_to(url_for('/index.php'));
 } else {
 }

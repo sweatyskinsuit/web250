@@ -30,10 +30,10 @@ if (!isset($bird)) {
   <dt>Conservation ID</dt>
   <dd><select name="conservation_id" value="<?php echo h($bird->conservation_id); ?>">
       <option>Pick One</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
+      <option>1-Low concern</option>
+      <option>2-Moderate concern</option>
+      <option>3-Extreme concern</option>
+      <option>4-Extinct</option>
     </select></dd>
 </dl>
 
