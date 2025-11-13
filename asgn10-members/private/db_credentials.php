@@ -6,13 +6,13 @@
 // 3. Unique credentials if working with multiple developers
 
 // localhost
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_NAME", "bird");
+//define("DB_SERVER", "localhost");
+//define("DB_USER", "root");
+//define("DB_PASS", "");
+//define("DB_NAME", "bird");
 
 // namecheap
-//define("DB_SERVER", "localhost");
-//define("DB_USER", "hannrgla_bird_user");
-//define("DB_PASS", "MehCeaBoo59?");
-//define("DB_NAME", "hannrgla_bird");
+define("DB_SERVER", "localhost");
+define("DB_USER", "hannrgla_bird_user");
+define("DB_PASS", "MehCeaBoo59?");
+define("DB_NAME", "hannrgla_bird");

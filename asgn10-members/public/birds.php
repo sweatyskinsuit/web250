@@ -4,7 +4,10 @@ $page_title = 'Bird List';
 include(SHARED_PATH . '/public_header.php');
 ?>
 
-
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 <h2>Bird inventory</h2>
 <p>This is a short list -- start your birding!</p>
 

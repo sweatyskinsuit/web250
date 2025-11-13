@@ -1,0 +1,24 @@
+[12-Nov-2025 00:22:19 UTC] PHP Warning:  require_once(classes/databaseobject.class.php): Failed to open stream: No such file or directory in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:22:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/databaseobject.class.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php:26
+Stack trace:
+#0 /home/hannrgla/public_html/web250/asgn10-members/public/members/index.php(1): require_once()
+#1 {main}
+  thrown in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:22:39 UTC] PHP Warning:  require_once(classes/databaseobject.class.php): Failed to open stream: No such file or directory in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:22:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/databaseobject.class.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php:26
+Stack trace:
+#0 /home/hannrgla/public_html/web250/asgn10-members/public/members/show.php(1): require_once()
+#1 {main}
+  thrown in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:22:41 UTC] PHP Warning:  require_once(classes/databaseobject.class.php): Failed to open stream: No such file or directory in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:22:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/databaseobject.class.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php:26
+Stack trace:
+#0 /home/hannrgla/public_html/web250/asgn10-members/public/members/index.php(1): require_once()
+#1 {main}
+  thrown in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:28:22 UTC] PHP Warning:  require_once(classes/databaseobject.class.php): Failed to open stream: No such file or directory in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26
+[12-Nov-2025 00:28:22 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/databaseobject.class.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php:26
+Stack trace:
+#0 /home/hannrgla/public_html/web250/asgn10-members/public/members/index.php(1): require_once()
+#1 {main}
+  thrown in /home/hannrgla/public_html/web250/asgn10-members/private/initialize.php on line 26

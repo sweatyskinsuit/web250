@@ -14,6 +14,7 @@ class Members extends DatabaseObject
     protected $hashed_password;
     public $password;
     public $confirm_password;
+    protected $password_required = true;
 
     public function __construct($args = [])
     {
