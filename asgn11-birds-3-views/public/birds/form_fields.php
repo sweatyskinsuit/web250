@@ -5,7 +5,7 @@
   so your file mimics the same functionality.
  
 */
-require_once('../private/initialize.php');
+require_once('../../private/initialize.php');
 
 if (!isset($bird)) {
   redirect_to(url_for('/index.php'));
