@@ -1,6 +1,6 @@
 <?php
 
-require_once('../private/initialize.php');
+require_once('../../private/initialize.php');
 
 /* 
   Use the bicycles/staff/new.php file as a guide 
@@ -22,7 +22,7 @@ if (is_post_request()) {
   if ($result === true) {
     $new_id = $bird->id;
     $session->message('The bird was created successfully.');
-    redirect_to(url_for('/show.php?id=' . $new_id));
+    redirect_to(url_for('/birds/show.php?id=' . $new_id));
   } else {
   }
 } else {
@@ -44,7 +44,7 @@ if (is_post_request()) {
     <?php
     ?>
 
-    <form action="<?php echo url_for('/new.php'); ?>" method="post">
+    <form action="<?php echo url_for('/birds/new.php'); ?>" method="post">
 
       <?php include('form_fields.php'); ?>
 

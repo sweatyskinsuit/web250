@@ -11,9 +11,11 @@ class Members extends DatabaseObject
     public $last_name;
     public $email;
     public $username;
-    protected $hashed_password;
-    public $password;
+    public $member_type;
+    public $hashed_password;
+    protected $password;
     public $confirm_password;
+    protected $password_required = true;
 
     public function __construct($args = [])
     {
@@ -30,9 +32,15 @@ class Members extends DatabaseObject
         return $this->first_name . " " . $this->last_name;
     }
 
-    protected function set_hashed_password()
+    public function set_hashed_password()
     {
         $this->hashed_password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+
+    public function set_password_for_signup($password, $confirm_password)
+    {
+        $this->password = $password;
+        $this->confirm_password = $confirm_password;
     }
 
     public function verify_password($password)
@@ -109,7 +117,6 @@ class Members extends DatabaseObject
         return $this->errors;
     }
 
-
     static public function find_by_username($username)
     {
         $sql = "SELECT * FROM " . static::$table_name . " ";
@@ -120,5 +127,15 @@ class Members extends DatabaseObject
         } else {
             return false;
         }
+    }
+
+    public static function find_by_email($email)
+    {
+        $sql = "SELECT * FROM members WHERE email='" . self::$database->escape_string($email) . "' LIMIT 1";
+        $result = self::$database->query($sql);
+        if ($result->num_rows > 0) {
+            return self::instantiate($result->fetch_assoc());
+        }
+        return false;
     }
 }

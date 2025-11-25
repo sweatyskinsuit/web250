@@ -1,0 +1,72 @@
+<?php
+require_once(dirname(__FILE__) . '/../../private/initialize.php');
+$page_title = 'Bird List';
+include(SHARED_PATH . '/public_header.php');
+?>
+
+<?php
+echo '<pre>';
+echo 'Member ID: ' . ($session->member_id ?? 'NOT SET') . "\n";
+echo 'Username: ' . ($session->username ?? 'NOT SET') . "\n";
+echo 'User level: [' . ($session->member_type ?? 'NOT SET') . ']' . "\n";
+echo 'Is logged in: ' . ($session->is_logged_in() ? 'YES' : 'NO') . "\n";
+echo 'Is admin: ' . ($session->is_admin_logged_in() ? 'YES' : 'NO') . "\n";
+echo 'Session data: ';
+print_r($_SESSION);
+echo '</pre>';
+?>
+
+<ul>
+  <?php if ($session->is_admin_logged_in()) { ?>
+    <li><a href="<?php echo url_for('members/index.php') ?>">View Members</a></li>
+  <?php } ?>
+  <li><a href="<?php echo url_for('birds/about.php'); ?>">About Us</a></li>
+</ul>
+
+<h2>Bird inventory</h2>
+<p>This is a short list -- start your birding!</p>
+
+<?php if ($session->is_logged_in()) { ?>
+
+  <a href="<?php echo url_for('/birds/new.php'); ?>">Add a New Bird</a>
+<?php } ?>
+
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Habitat</th>
+    <th>Food</th>
+    <th>Conservation</th>
+    <th>Backyard Tips</th>
+    <th>&nbsp;</th>
+  </tr>
+
+
+  <?php
+
+  // Create a new bird object that uses the find_all() method
+
+  $birds = Bird::find_all();
+
+  foreach ($birds as $bird) {
+
+  ?>
+    <tr>
+      <td><?php echo h($bird->common_name); ?></td>
+      <td><?php echo h($bird->habitat); ?></td>
+      <td><?php echo h($bird->food); ?></td>
+      <td><?php echo h($bird->conservation()); ?></td>
+      <td><?php echo h($bird->backyard_tips); ?></td>
+      <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
+
+      <?php if ($session->is_admin_logged_in()) { ?>
+        <td><a href="edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
+        <td><a href="<?php echo url_for('delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
+      <?php } ?>
+    </tr>
+  <?php } ?>
+
+</table>
+
+
+<?php include(SHARED_PATH . '/public_footer.php'); ?>

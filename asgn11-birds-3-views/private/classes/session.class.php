@@ -5,6 +5,8 @@ class Session
 
   private $member;
   public $username;
+  public $member_id;
+  public $member_type;
   private $last_login;
 
   public const MAX_LOGIN_AGE = 60 * 60 * 24; // 1 day
@@ -20,9 +22,11 @@ class Session
     if ($member) {
       // prevent session fixation attacks
       session_regenerate_id();
-      $this->member = $_SESSION['member'] = $member->id;
+      $_SESSION['member_id'] = $member->id;
+      $this->member_id = $member->id;
       $this->username = $_SESSION['username'] = $member->username;
       $this->last_login = $_SESSION['last_login'] = time();
+      $this->member_type = $_SESSION['member_type'] = $member->member_type;
     }
     return true;
   }
@@ -30,26 +34,34 @@ class Session
   public function is_logged_in()
   {
     // return isset($this->member);
-    return isset($this->member) && $this->last_login_is_recent();
+    return isset($this->member_id) && $this->last_login_is_recent();
+  }
+
+  public function is_admin_logged_in()
+  {
+    return $this->is_logged_in() && ($this->member_type === 'a');
   }
 
   public function logout()
   {
-    unset($_SESSION['member']);
+    unset($_SESSION['member_id']);
     unset($_SESSION['username']);
     unset($_SESSION['last_login']);
-    unset($this->member);
+    unset($_SESSION['member_type']);
+    unset($this->member_id);
     unset($this->username);
     unset($this->last_login);
+    unset($this->member_type);
     return true;
   }
 
   private function check_stored_login()
   {
-    if (isset($_SESSION['member'])) {
-      $this->member = $_SESSION['member'];
+    if (isset($_SESSION['member_id'])) {
+      $this->member_id = $_SESSION['member_id'];
       $this->username = $_SESSION['username'];
       $this->last_login = $_SESSION['last_login'];
+      $this->member_type = $_SESSION['member_type'] ?? '';
     }
   }
 
