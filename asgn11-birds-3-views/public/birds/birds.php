@@ -4,18 +4,6 @@ $page_title = 'Bird List';
 include(SHARED_PATH . '/public_header.php');
 ?>
 
-<?php
-echo '<pre>';
-echo 'Member ID: ' . ($session->member_id ?? 'NOT SET') . "\n";
-echo 'Username: ' . ($session->username ?? 'NOT SET') . "\n";
-echo 'User level: [' . ($session->member_type ?? 'NOT SET') . ']' . "\n";
-echo 'Is logged in: ' . ($session->is_logged_in() ? 'YES' : 'NO') . "\n";
-echo 'Is admin: ' . ($session->is_admin_logged_in() ? 'YES' : 'NO') . "\n";
-echo 'Session data: ';
-print_r($_SESSION);
-echo '</pre>';
-?>
-
 <ul>
   <?php if ($session->is_admin_logged_in()) { ?>
     <li><a href="<?php echo url_for('members/index.php') ?>">View Members</a></li>
