@@ -49,7 +49,7 @@ include(SHARED_PATH . '/public_header.php');
 
       <?php if ($session->is_admin_logged_in()) { ?>
         <td><a href="edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
-        <td><a href="<?php echo url_for('delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
+        <td><a href="<?php echo url_for('/birds/delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
       <?php } ?>
     </tr>
   <?php } ?>

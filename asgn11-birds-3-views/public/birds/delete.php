@@ -18,7 +18,7 @@ if ($bird == false) {
 if (is_post_request()) {
   $result = $bird->delete();
   $session->message('The bird was deleted successfully.');
-  redirect_to(url_for('/index.php'));
+  redirect_to(url_for('/birds/show.php'));
 } else {
 }
 ?>
@@ -34,7 +34,7 @@ if (is_post_request()) {
     <p>Are you sure you want to delete this bird?</p>
     <p><?php echo h('Bird name'); ?></p>
 
-    <form action="<?php echo url_for('/delete.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/birds/delete.php?id=' . h(u($id))); ?>" method="post">
       <div>
         <input type="submit" name="commit" value="Delete Bird">
       </div>
