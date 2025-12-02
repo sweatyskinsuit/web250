@@ -9,6 +9,7 @@ if (!isset($_GET['id'])) {
 }
 $id = $_GET['id'];
 $member = Members::find_by_id($id);
+$member->set_password_not_required();
 if ($member == false) {
   redirect_to(url_for('/members/index.php'));
 }

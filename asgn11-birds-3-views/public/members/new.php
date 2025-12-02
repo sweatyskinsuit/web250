@@ -2,7 +2,10 @@
 
 require_once('../../private/initialize.php');
 
-require_login();
+if (!$session->is_admin_logged_in()) {
+  $session->message('You must be an admin to create members.');
+  redirect_to(url_for('/login.php'));
+}
 
 if (is_post_request()) {
 

@@ -31,7 +31,7 @@ $bird = Bird::find_by_id($id);
   <dd><?php echo h($bird->common_name); ?></dd>
 </dl>
 <dl>
-  <dt>Habittat</dt>
+  <dt>Habitat</dt>
   <dd><?php echo h($bird->habitat); ?></dd>
 </dl>
 <dl>

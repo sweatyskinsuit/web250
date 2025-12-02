@@ -2,6 +2,11 @@
 
 require_once('../../private/initialize.php');
 
+if (!$session->is_logged_in()) {
+  $session->message('You must be logged in to edit birds.');
+  redirect_to(url_for('/login.php'));
+}
+
 /* 
   Use the bicycles/staff/edit.php file as a guide 
   so your file mimics the same functionality.
@@ -31,7 +36,7 @@ if (is_post_request()) {
 
   if ($result === true) {
     $session->message('The bird was updated successfully.');
-    redirect_to(url_for('/show.php?id=' . $id));
+    redirect_to(url_for('/birds/show.php?id=' . $id));
   } else {
   }
 } else {
@@ -50,7 +55,7 @@ if (is_post_request()) {
 
     <?php echo display_errors($bird->errors); ?>
 
-    <form action="<?php echo url_for('/edit.php?id=' . h(u($id))); ?>" method="post">
+    <form action="<?php echo url_for('/birds/edit.php?id=' . h(u($id))); ?>" method="post">
       <?php include('form_fields.php'); ?>
       <div id="operations">
         <input type="submit" value="Update Bird">

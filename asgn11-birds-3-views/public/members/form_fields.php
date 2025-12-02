@@ -26,6 +26,22 @@ if (!isset($member)) {
   <dd><input type="text" name="member[username]" value="<?php echo h($member->username); ?>" /></dd>
 </dl>
 
+<?php if (isset($session) && $session->is_admin_logged_in()) { ?>
+  <dl>
+    <dt>Member Type</dt>
+    <dd>
+      <select name="member[member_type]">
+        <option value="m" <?php if ($member->member_type == 'm') {
+                            echo 'selected';
+                          } ?>>Member</option>
+        <option value="a" <?php if ($member->member_type == 'a') {
+                            echo 'selected';
+                          } ?>>Admin</option>
+      </select>
+    </dd>
+  </dl>
+<?php } ?>
+
 <dl>
   <dt>Password</dt>
   <dd><input type="password" name="member[password]" value="" /></dd>

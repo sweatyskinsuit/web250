@@ -138,4 +138,9 @@ class Members extends DatabaseObject
         }
         return false;
     }
+
+    public function set_password_not_required()
+    {
+        $this->password_required = false;
+    }
 }

@@ -2,6 +2,11 @@
 
 require_once('../../private/initialize.php');
 
+if (!$session->is_logged_in()) {
+  $session->message('You must be logged in to delete birds.');
+  redirect_to(url_for('/login.php'));
+}
+
 /* 
   Use the bicycles/staff/delete.php file as a guide 
   so your file mimics the same functionality.

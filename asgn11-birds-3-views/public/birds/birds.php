@@ -47,7 +47,7 @@ include(SHARED_PATH . '/public_header.php');
       <td><?php echo h($bird->backyard_tips); ?></td>
       <td><a href="detail.php?id=<?php echo $bird->id; ?>">View</a></td>
 
-      <?php if ($session->is_admin_logged_in()) { ?>
+      <?php if ($session->is_logged_in()) { ?>
         <td><a href="edit.php?id=<?php echo $bird->id; ?>">Edit</a></td>
         <td><a href="<?php echo url_for('/birds/delete.php?id=' . h(u($bird->id))); ?>">Delete</a></td>
       <?php } ?>
